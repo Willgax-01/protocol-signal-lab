@@ -10,7 +10,11 @@ def run_monitor(script_name):
         text=True
     )
 
-    print(result.stdout)
+   output = result.stdout
+print(output)
+
+with open("reports/latest_report.txt", "a") as f:
+    f.write(output)
 
 def main():
     print("Protocol Signal Lab")

@@ -19,7 +19,7 @@ def run_monitor(script_name):
 
     process.wait()
 
-    with open("reports/latest_report.txt", "a") as f:
+    with open("reports/latest_report.txt", "w") as f:
         f.write(output)
         f.write("\n")
 

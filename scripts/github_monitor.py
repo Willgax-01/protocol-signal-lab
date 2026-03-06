@@ -16,17 +16,20 @@ since = (datetime.utcnow() - timedelta(days=1)).isoformat() + "Z"
 
 def calculate_score(stars, forks, issues, commits24h, total_commits):
     score = 0
-    
+
     score += min(stars / 1000, 20)
     score += min(forks / 500, 20)
     score += min(commits24h * 5, 25)
     score += min(total_commits / 500, 20)
-    
+
     penalty = min(issues / 100, 15)
-    
+
     score = score - penalty
-    
+
     return round(max(score, 0), 2)
+
+
+results = []
 
 for repo in repos:
 
@@ -51,14 +54,30 @@ for repo in repos:
 
         score = calculate_score(stars, forks, issues, commit_24h, total_commits)
 
-        print("\n" + "-" * 50)
-        print(f"Repository: {repo}")
-        print(f"Stars: {stars}")
-        print(f"Forks: {forks}")
-        print(f"Open Issues: {issues}")
-        print(f"Commits (24h): {commit_24h}")
-        print(f"Total Commits: {total_commits}")
-        print(f"Signal Score: {score} / 100")
+        results.append({
+            "repo": repo,
+            "stars": stars,
+            "forks": forks,
+            "issues": issues,
+            "commit_24h": commit_24h,
+            "total_commits": total_commits,
+            "score": score
+        })
 
     except Exception:
         print(f"\nCould not fetch data for {repo}")
+
+
+results.sort(key=lambda x: x["score"], reverse=True)
+
+
+for r in results:
+
+    print("\n" + "-" * 50)
+    print(f"Repository: {r['repo']}")
+    print(f"Stars: {r['stars']}")
+    print(f"Forks: {r['forks']}")
+    print(f"Open Issues: {r['issues']}")
+    print(f"Commits (24h): {r['commit_24h']}")
+    print(f"Total Commits: {r['total_commits']}")
+    print(f"Signal Score: {r['score']} / 100")

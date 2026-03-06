@@ -3,7 +3,7 @@ import requests
 # Simple GitHub signal monitor
 
 REPOSITORIES = [
-    "eigenlayer/eigenlayer-contracts",
+    "Layr-Labs/eigenlayer-contracts",
     "celestiaorg/celestia-node",
     "base-org/node"
 ]

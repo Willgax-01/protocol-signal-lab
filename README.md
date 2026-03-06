@@ -1,52 +1,64 @@
 # Protocol Signal Lab
 
-AI agents that monitor crypto infrastructure activity and convert it into research signals.
+Protocol Signal Lab is a small automated tool that monitors key crypto infrastructure repositories and generates simple activity signals.
 
-## Overview
+The system runs automatically using GitHub Actions and collects development metrics from selected protocol repositories.
 
-Protocol Signal Lab is an experimental research system designed to track important signals across crypto infrastructure ecosystems.
+## What it tracks
 
-The goal is to reduce noise and surface meaningful developments from sources such as governance forums, GitHub activity, on-chain metrics, and ecosystem announcements.
+For each monitored repository the tool collects:
 
-Instead of manually tracking dozens of information streams, AI agents analyze updates and convert them into simple insights.
+* Stars
+* Forks
+* Open Issues
+* Commits in the last 24 hours
+* Total commits
+* Signal Score (0–100)
 
-## Goals
+These metrics help provide a quick overview of repository popularity, development activity, and maintenance pressure.
 
-- Monitor governance proposals and protocol updates
-- Track GitHub activity from key infrastructure projects
-- Observe on-chain signals such as stablecoin supply and TVL changes
-- Generate simple daily research summaries
+## How it works
 
-## Architecture (Early Concept)
+GitHub Actions runs the signal collection workflow automatically.
 
-Sources  
-↓  
-AI Signal Processing  
-↓  
-Research Insights
+Pipeline:
 
-## Example Output
+GitHub Actions
+→ signal_collector.py
+→ github_monitor.py
+→ GitHub API
+→ Report generation
 
-Daily Infra Signals
+The system fetches repository data from the GitHub API, calculates a signal score, ranks the repositories, and generates a report.
 
-• New governance proposal from Aave  
-• Stablecoin liquidity expansion on Base  
-• Major GitHub update from EigenLayer
+## Example output
 
-## Status
+Repository: base-org/node
+Stars: 68708
+Forks: 3215
+Open Issues: 15
+Commits (24h): 1
+Total Commits: 188
+Signal Score: 31.66 / 100
 
-Early research experiment.
+## Project Structure
 
-## Roadmap
+```
+protocol-signal-lab
+│
+├ .github/workflows
+│   └ signal.yml
+│
+├ scripts
+│   ├ signal_collector.py
+│   └ github_monitor.py
+│
+├ reports
+│   └ latest_report.txt
+│
+└ requirements.txt
+```
 
-Phase 1  
-Collect ecosystem signals from public sources
+## Goal
 
-Phase 2  
-Use AI to summarize protocol developments
-
-Phase 3  
-Automate daily research reports
-
-Phase 4  
-Build a simple dashboard for infrastructure signals
+The goal of this project is to provide a lightweight infrastructure signal engine for monitoring development activity in important blockchain protocol repositories.

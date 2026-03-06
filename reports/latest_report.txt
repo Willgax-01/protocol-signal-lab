@@ -1,6 +1,6 @@
 Protocol Signal Lab
 GitHub Infrastructure Monitor
-Timestamp: 2026-03-06 19:12:58 UTC
+Timestamp: 2026-03-06 19:16:01 UTC
 ==================================================
 
 --------------------------------------------------
@@ -10,6 +10,7 @@ Forks: 1066
 Open Issues: 371
 Commits (24h): 2
 Total Commits: 3016
+Signal Score: 15.45 / 100
 
 --------------------------------------------------
 Repository: base-org/node
@@ -18,6 +19,7 @@ Forks: 3215
 Open Issues: 15
 Commits (24h): 1
 Total Commits: 188
+Signal Score: 31.66 / 100
 
 --------------------------------------------------
 Repository: Layr-Labs/eigenlayer-contracts
@@ -26,4 +28,5 @@ Forks: 472
 Open Issues: 76
 Commits (24h): 3
 Total Commits: 2490
+Signal Score: 20.88 / 100
 

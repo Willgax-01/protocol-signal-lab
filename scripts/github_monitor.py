@@ -3,7 +3,7 @@ import requests
 repos = [
     "celestiaorg/celestia-node",
     "base-org/node",
-    "eigenlayer/eigenlayer-contracts"
+    "Layr-Labs/eigenlayer-contracts"
 ]
 
 print("Protocol Signal Lab")

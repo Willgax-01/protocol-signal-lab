@@ -1,16 +1,7 @@
 Protocol Signal Lab
 GitHub Infrastructure Monitor
-Timestamp: 2026-03-06 19:16:01 UTC
+Timestamp: 2026-03-06 19:18:31 UTC
 ==================================================
-
---------------------------------------------------
-Repository: celestiaorg/celestia-node
-Stars: 993
-Forks: 1066
-Open Issues: 371
-Commits (24h): 2
-Total Commits: 3016
-Signal Score: 15.45 / 100
 
 --------------------------------------------------
 Repository: base-org/node
@@ -29,4 +20,13 @@ Open Issues: 76
 Commits (24h): 3
 Total Commits: 2490
 Signal Score: 20.88 / 100
+
+--------------------------------------------------
+Repository: celestiaorg/celestia-node
+Stars: 993
+Forks: 1066
+Open Issues: 371
+Commits (24h): 2
+Total Commits: 3016
+Signal Score: 15.45 / 100
 

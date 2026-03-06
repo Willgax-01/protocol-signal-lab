@@ -2,17 +2,23 @@
 ===== github_monitor.py =====
 Protocol Signal Lab
 GitHub Infrastructure Monitor
-----------------------------------------
+Timestamp: 2026-03-06T18:46:50.155041 UTC
+==================================================
 
+--------------------------------------------------
 Repository: celestiaorg/celestia-node
 Stars: 993
 Forks: 1066
 Open Issues: 371
 
+--------------------------------------------------
 Repository: base-org/node
 Stars: 68708
 Forks: 3215
 Open Issues: 15
 
-Repository: eigenlayer/eigenlayer-contracts
-Could not fetch data for eigenlayer/eigenlayer-contracts
+--------------------------------------------------
+Repository: Layr-Labs/eigenlayer-contracts
+Stars: 713
+Forks: 472
+Open Issues: 76

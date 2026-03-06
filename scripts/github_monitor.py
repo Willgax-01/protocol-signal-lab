@@ -9,7 +9,7 @@ repos = [
 
 print("Protocol Signal Lab")
 print("GitHub Infrastructure Monitor")
-print("Timestamp:", datetime.utcnow().isoformat(), "UTC")
+print("Timestamp:", datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
 print("=" * 50)
 
 for repo in repos:

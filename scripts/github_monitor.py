@@ -10,7 +10,8 @@ REPOSITORIES = [
 
 def check_repo(repo):
     url = f"https://api.github.com/repos/{repo}"
-    response = requests.get(url)
+   headers = {"Accept": "application/vnd.github+json"}
+response = requests.get(url, headers=headers)
 
     if response.status_code != 200:
         print(f"Could not fetch data for {repo}")

@@ -1,3 +1,8 @@
 
 ===== github_monitor.py =====
 
+  File "/home/runner/work/protocol-signal-lab/protocol-signal-lab/scripts/github_monitor.py", line 12
+    print("Timestamp:", datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+         ^
+SyntaxError: '(' was never closed
+

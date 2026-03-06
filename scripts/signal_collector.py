@@ -4,18 +4,21 @@ def run_monitor(script_name):
     print(f"\nRunning: {script_name}")
     print("-" * 40)
 
-    result = subprocess.run(
+    process = subprocess.Popen(
         ["python", f"scripts/{script_name}"],
-        capture_output=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
         text=True
     )
 
-    output = result.stdout
+    output = ""
 
-    # Print output to GitHub Actions log
-    print(output)
+    for line in process.stdout:
+        print(line, end="")  # show in GitHub Actions log
+        output += line
 
-    # Save output to report file
+    process.wait()
+
     with open("reports/latest_report.txt", "a") as f:
         f.write(output)
         f.write("\n")

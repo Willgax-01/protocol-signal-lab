@@ -28,10 +28,30 @@ for name, url in checks:
 print("-" * 40)
 
 # GitHub ecosystem check
-repos = [
-    "shelby/examples",
-    "shelby/feedback"
-]
+print("-" * 40)
+print("Shelby GitHub Ecosystem")
+
+org_url = "https://api.github.com/orgs/shelby/repos"
+
+try:
+    r = requests.get(org_url, timeout=10)
+    repos = r.json()
+
+    repo_count = len(repos)
+    print(f"Total Shelby Repositories: {repo_count}")
+
+    for repo in repos[:5]:   # show top 5 repos
+        name = repo["name"]
+        stars = repo["stargazers_count"]
+
+        print(f"Repo: shelby/{name}")
+        print(f"Stars: {stars}")
+
+        if stars > 0:
+            score += 10
+
+except:
+    print("Could not fetch Shelby repositories")
 
 for repo in repos:
     try:

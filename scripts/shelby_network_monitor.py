@@ -2,19 +2,21 @@ import requests
 from datetime import datetime
 
 print("Shelby Network Monitor")
-print("Timestamp:", datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"))
-print("=" * 50)
+print(f"Timestamp: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}")
+print("=" * 40)
 
-url = "https://explorer.shelby.xyz/shelbynet"
+explorer_url = "https://explorer.shelby.xyz/shelbynet"
 
 try:
-    response = requests.get(url, timeout=10)
+    response = requests.get(explorer_url, timeout=10)
 
     if response.status_code == 200:
-        print("Shelby Explorer reachable")
+        print("Shelby Explorer: reachable")
         print("Network Status: Active")
     else:
-        print("Shelby Explorer responded but status unclear")
+        print("Shelby Explorer: reachable but unexpected response")
+        print("Network Status: Unknown")
 
-except Exception:
-    print("Could not reach Shelby network explorer")
+except Exception as e:
+    print("Shelby Explorer: unreachable")
+    print("Network Status: Down")

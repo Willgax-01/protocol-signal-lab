@@ -29,9 +29,9 @@ def main():
     print("Infrastructure Signal Engine")
     print("=" * 40)
 
-   monitors = [
-    "github_monitor.py",
-    "shelby_network_monitor.py"
+    monitors = [
+        "github_monitor.py",
+        "shelby_network_monitor.py"
     ]
 
     for monitor in monitors:

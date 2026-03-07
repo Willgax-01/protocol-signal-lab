@@ -1,32 +1,6 @@
-Protocol Signal Lab
-GitHub Infrastructure Monitor
-Timestamp: 2026-03-07 12:50:59 UTC
+Shelby Network Monitor
+Timestamp: 2026-03-07 17:38:34 UTC
 ==================================================
-
---------------------------------------------------
-Repository: base-org/node
-Stars: 68707
-Forks: 3216
-Open Issues: 15
-Commits (24h): 0
-Total Commits: 188
-Signal Score: 26.66 / 100
-
---------------------------------------------------
-Repository: celestiaorg/celestia-node
-Stars: 993
-Forks: 1067
-Open Issues: 371
-Commits (24h): 2
-Total Commits: 3016
-Signal Score: 15.45 / 100
-
---------------------------------------------------
-Repository: Layr-Labs/eigenlayer-contracts
-Stars: 713
-Forks: 472
-Open Issues: 76
-Commits (24h): 0
-Total Commits: 2490
-Signal Score: 5.88 / 100
+Shelby Explorer reachable
+Network Status: Active
 

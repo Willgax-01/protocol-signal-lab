@@ -1,6 +1,14 @@
-Shelby Network Monitor
-Timestamp: 2026-03-07 17:41:56 UTC
+Shelby Ecosystem Monitor
+Timestamp: 2026-03-07 17:44:58 UTC
 ========================================
 Shelby Explorer: reachable
-Network Status: Active
+Shelby Docs: reachable
+Shelby Website: unexpected response
+----------------------------------------
+Repo: shelby/examples
+Stars: 75
+Repo: shelby/feedback
+Stars: 16
+----------------------------------------
+Shelby Ecosystem Health Score: 90 / 100
 

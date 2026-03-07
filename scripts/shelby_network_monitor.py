@@ -7,6 +7,10 @@ print("=" * 40)
 
 score = 0
 
+# ---------------------------------------------------
+# Infrastructure Checks
+# ---------------------------------------------------
+
 checks = [
     ("Shelby Explorer", "https://explorer.shelby.xyz/shelbynet"),
     ("Shelby Docs", "https://docs.shelby.xyz/"),
@@ -16,19 +20,22 @@ checks = [
 for name, url in checks:
     try:
         r = requests.get(url, timeout=10)
+
         if r.status_code == 200:
             print(f"{name}: reachable")
             score += 20
         else:
             print(f"{name}: unexpected response")
-            score += 10
-    except:
+
+    except Exception:
         print(f"{name}: unreachable")
 
 print("-" * 40)
 
-# GitHub ecosystem check
-print("-" * 40)
+# ---------------------------------------------------
+# Shelby GitHub Ecosystem Discovery
+# ---------------------------------------------------
+
 print("Shelby GitHub Ecosystem")
 
 org_url = "https://api.github.com/orgs/shelby/repos"
@@ -37,38 +44,38 @@ try:
     r = requests.get(org_url, timeout=10)
     repos = r.json()
 
-    repo_count = len(repos)
-    print(f"Total Shelby Repositories: {repo_count}")
+    if isinstance(repos, list):
 
-    for repo in repos[:5]:   # show top 5 repos
-        name = repo["name"]
-        stars = repo["stargazers_count"]
+        print(f"Total Shelby Repositories: {len(repos)}")
+        print()
 
-        print(f"Repo: shelby/{name}")
-        print(f"Stars: {stars}")
+        # Show top 5 repos only to keep output clean
+        for repo in repos[:5]:
 
-        if stars > 0:
-            score += 10
+            name = repo.get("name")
+            stars = repo.get("stargazers_count", 0)
 
-except:
-    print("Could not fetch Shelby repositories")
+            print(f"Repo: shelby/{name}")
+            print(f"Stars: {stars}")
 
-for repo in repos:
-    try:
-        url = f"https://api.github.com/repos/{repo}"
-        r = requests.get(url, timeout=10)
-        data = r.json()
+            if stars > 0:
+                score += 10
 
-        stars = data.get("stargazers_count", 0)
+            print()
 
-        print(f"Repo: {repo}")
-        print(f"Stars: {stars}")
+    else:
+        print("Could not fetch Shelby repositories")
 
-        if stars > 0:
-            score += 20
-
-    except:
-        print(f"Could not fetch repo: {repo}")
+except Exception:
+    print("GitHub API error while fetching Shelby repos")
 
 print("-" * 40)
+
+# ---------------------------------------------------
+# Ecosystem Health Score
+# ---------------------------------------------------
+
+if score > 100:
+    score = 100
+
 print(f"Shelby Ecosystem Health Score: {score} / 100")

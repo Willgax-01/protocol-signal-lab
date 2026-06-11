@@ -1,8 +1,8 @@
 Shelby Ecosystem Monitor
-Timestamp: 2026-06-10 15:39:22 UTC
+Timestamp: 2026-06-11 16:04:02 UTC
 ========================================
 Shelby Explorer: unexpected response
-Shelby Docs: unexpected response
+Shelby Docs: reachable
 Shelby Website: unexpected response
 ----------------------------------------
 Shelby GitHub Ecosystem
@@ -24,5 +24,5 @@ Repo: shelby/solana-starter
 Stars: 21
 
 ----------------------------------------
-Shelby Ecosystem Health Score: 50 / 100
+Shelby Ecosystem Health Score: 70 / 100
 

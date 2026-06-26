@@ -1,5 +1,5 @@
 Shelby Ecosystem Monitor
-Timestamp: 2026-06-25 14:35:05 UTC
+Timestamp: 2026-06-26 14:26:13 UTC
 ========================================
 Shelby Explorer: unexpected response
 Shelby Docs: reachable
